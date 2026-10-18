@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% from "_macros.html" import empty %}{% block title %}{{ label }}{% endblock %}{% block content %}
+<section class="page"><p class="center"><a class="link" href="{{ url_for('homes') }}">← All Categories</a></p>
+<h1 class="title reveal">{{ label }} <span class="gold">Collection</span></h1><p class="center">{{ desc }}</p>
+<div class="mason">{% for p in items %}<div class="m"><img loading="lazy" data-full="{{ url_for('static', filename=p.path) }}" src="{{ url_for('static', filename=p.path) }}" alt="{{ p.title }}"></div>{% else %}{{ empty() }}{% endfor %}</div>
+<p class="center"><a class="btn" href="{{ url_for('contact') }}">Enquire About This Design</a></p></section>{% endblock %}

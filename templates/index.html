@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% from "_macros.html" import catcard, empty %}{% block content %}
+<section class="hero"><div class="reveal"><p class="eyebrow">LAND • LUXURY HOMES • RENOVATION</p>
+<h1>Where Luxury Meets <span class="gold">Your Dream Home</span></h1>
+<p class="sub">We buy prime land, build premium homes on it and sell them to you with complete trust and quality.</p>
+<a class="btn" href="{{ url_for('homes') }}">View Our Homes</a> <a class="btn ghost" href="{{ url_for('contact') }}">Contact Us</a></div>
+<div class="stack">{% for h in hero %}<div class="ph p{{ loop.index }}" style="background-image:url('{{ url_for('static', filename=h) if h else '' }}')"></div>{% endfor %}</div></section>
+<section class="stats"><div class="stat reveal"><b data-n="15">0</b>+<p>Years Experience</p></div><div class="stat reveal"><b data-n="100">0</b>+<p>Homes Built</p></div><div class="stat reveal"><b data-n="500">0</b>+<p>Happy Families</p></div><div class="stat reveal"><b data-n="50">0</b>+<p>Renovations</p></div></section>
+<section><h2 class="title reveal">Our <span class="gold">Services</span></h2><div class="grid">{% for i,t,d in services %}<div class="card tilt reveal"><div class="ico">{{ i }}</div><h3>{{ t }}</h3><p>{{ d }}</p></div>{% endfor %}</div></section>
+<section class="alt"><h2 class="title reveal">Explore Our <span class="gold">Designs</span></h2><div class="grid">{% for c in feat %}{{ catcard(c) }}{% else %}{{ empty() }}{% endfor %}</div>
+<p class="center"><a class="btn" href="{{ url_for('homes') }}">Explore All</a></p></section>
+<section class="cta reveal"><h2>Book Your <span class="gold">Dream Home</span> Today</h2><a class="btn" href="{{ url_for('contact') }}">Free Consultation</a></section>{% endblock %}

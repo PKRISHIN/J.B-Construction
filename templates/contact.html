@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Contact{% endblock %}{% block content %}
+<section class="page contact"><p class="eyebrow center reveal">LET'S BUILD TOGETHER</p><h1 class="title reveal">Start Your <span class="gold">Dream Home</span></h1>
+<div class="cwrap"><div class="cinfo reveal">
+<a class="citem" href="tel:{{ PHONE }}"><span>📞</span><div><small>CALL US</small><b>{{ PHONE }}</b></div></a>
+<a class="citem" target="_blank" href="https://wa.me/{{ WHATSAPP }}"><span>💬</span><div><small>WHATSAPP</small><b>{{ PHONE }}</b></div></a>
+<a class="citem" href="mailto:{{ EMAIL }}"><span>✉️</span><div><small>EMAIL</small><b>{{ EMAIL }}</b></div></a>
+<div class="citem"><span>👤</span><div><small>OWNER</small><b>{{ OWNER }}</b></div></div>
+<a class="btn" target="_blank" href="https://wa.me/{{ WHATSAPP }}">Chat on WhatsApp</a></div>
+<form method="post" class="cform glow reveal"><h3>Book a Free Consultation</h3>{% for m in get_flashed_messages() %}<div class="flash">{{ m }}</div>{% endfor %}
+<div class="row"><input name="name" placeholder="Your Name" required><input name="phone" placeholder="Phone Number" required></div>
+<select name="type"><option>Buy Home</option><option>Renovation</option><option>Land</option><option>Other</option></select>
+<textarea name="msg" rows="4" placeholder="Tell us about your requirement..."></textarea><button class="btn">Send Enquiry ➜</button></form></div></section>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% from "_macros.html" import empty %}{% block title %}Renovation{% endblock %}{% block content %}
+<section class="page"><h1 class="title reveal">Home <span class="gold">Renovation</span></h1><p class="center reveal">Transform your old home into a modern, luxurious space. Tap a service to see designs.</p>
+<div class="grid" style="margin-top:40px">{% for t,d,im,c in items %}<a class="card catcard tilt reveal" href="{{ url_for('gallery', cat=c) }}"><div class="img" {% if im %}style="background-image:url('{{ url_for('static', filename=im) }}')"{% endif %}></div><h3>{{ t }}</h3><p>{{ d }}</p><span class="link">View Designs →</span></a>{% endfor %}</div>
+<p class="center"><a class="btn" href="{{ url_for('contact') }}">Get a Free Quote</a></p></section>{% endblock %}

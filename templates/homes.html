@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% from "_macros.html" import catcard, empty %}{% block title %}Our Homes{% endblock %}{% block content %}
+<section class="page"><h1 class="title reveal">Our <span class="gold">Luxury Homes</span></h1><p class="center reveal">Tap any category to see the full design collection.</p>
+<div class="grid" style="margin-top:40px">{% for c in cats %}{{ catcard(c) }}{% else %}{{ empty() }}{% endfor %}</div></section>{% endblock %}
