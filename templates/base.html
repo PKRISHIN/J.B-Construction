@@ -3,8 +3,8 @@
 <title>{% block title %}{{ BRAND }}{% endblock %} | Luxury Homes</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
-<body>
-<div id="loader"><span>{{ BRAND }}</span></div>
+<body data-home="{{ '1' if request.endpoint == 'home' else '' }}">
+<div id="loader"><div class="ld"><div class="ldlogo"><svg class="mark big" viewBox="0 0 64 64"><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0bd7f"/><stop offset="1" stop-color="#8f6a2f"/></linearGradient></defs><path class="draw" d="M32 4 L60 24 V60 H4 V24 Z" fill="rgba(227,195,123,.08)" stroke="url(#lg2)" stroke-width="3" stroke-linejoin="round"/><path d="M14 26 L32 12 L50 26" fill="none" stroke="url(#lg2)" stroke-width="2"/><text x="32" y="48" text-anchor="middle" font-family="Playfair Display,serif" font-weight="800" font-size="22" fill="url(#lg2)">JB</text></svg><span class="lt"><b>JB CONSTRUCTION<i>.co</i></b><small>BUILDERS • DEVELOPERS</small></span></div><div class="scene"><div class="card3d"><div class="face fr"></div><div class="face bk"></div></div><div class="gl"></div></div><p class="ldt">Building Excellence &amp; Infrastructure</p></div></div>
 <canvas id="bg"></canvas><div id="cursor"></div>
 <nav id="nav"><a class="logo" href="{{ url_for('home') }}"><svg class="mark" viewBox="0 0 64 64"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0bd7f"/><stop offset="1" stop-color="#8f6a2f"/></linearGradient></defs><path class="draw" d="M32 4 L60 24 V60 H4 V24 Z" fill="rgba(227,195,123,.08)" stroke="url(#lg)" stroke-width="3" stroke-linejoin="round"/><path d="M14 26 L32 12 L50 26" fill="none" stroke="url(#lg)" stroke-width="2"/><text x="32" y="48" text-anchor="middle" font-family="Playfair Display,serif" font-weight="800" font-size="22" fill="url(#lg)">JB</text></svg><span class="lt"><b>JB CONSTRUCTION<i>.co</i></b><small>BUILDERS • DEVELOPERS</small></span></a>
 <button id="burger">☰</button>

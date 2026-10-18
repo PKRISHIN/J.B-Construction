@@ -46,3 +46,56 @@ footer{text-align:center;padding:50px 6%;background:var(--em);color:#e9e4d8}foot
 .catcard{display:block;text-decoration:none;color:inherit}.catcard .img{position:relative;height:260px}.badge{position:absolute;top:14px;right:14px;background:rgba(15,61,51,.9);color:#e0bd7f;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600}
 .mason{columns:3 280px;column-gap:18px;margin-top:40px}.m{break-inside:avoid;margin-bottom:18px;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(15,61,51,.15)}.m img{width:100%;display:block;cursor:zoom-in;transition:transform .6s}.m:hover img{transform:scale(1.07)}
 #lb button{position:absolute;background:rgba(255,255,255,.15);border:0;color:#fff;font-size:2rem;width:54px;height:54px;border-radius:50%;cursor:pointer}#lb .x{top:20px;right:20px;font-size:1.3rem}#lb .pv{left:20px;top:50%}#lb .nx{right:20px;top:50%}
+
+#loader{display:flex;background:radial-gradient(circle at 50% 35%,#14403a,#04120e 75%);color:#fff}
+.ld{display:flex;flex-direction:column;align-items:center;gap:34px;text-align:center;padding:0 20px}
+.ldlogo{display:flex;align-items:center;gap:16px;animation:rise .9s both}.ldlogo .mark{width:84px;height:84px}.ldlogo .lt b{font-size:1.7rem;color:#f3dca0;letter-spacing:4px}.ldlogo .lt i{color:#e0bd7f}.ldlogo .lt small{font-size:.7rem;color:#b9c9c2}
+.scene{perspective:1100px;width:min(78vw,340px);height:min(45vw,197px);animation:rise 1s .5s both}
+.card3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spin 7s linear infinite}
+.card3d::before{content:"";position:absolute;inset:0;border-radius:8px;background:#c9a45c}
+.face{position:absolute;inset:0;border-radius:8px;background-size:cover;background-position:center;backface-visibility:hidden;box-shadow:0 0 45px rgba(227,195,123,.28)}
+.fr{background-image:url(../img/card/front.jpg);transform:translateZ(2px)}.bk{background-image:url(../img/card/back.jpg);transform:rotateY(180deg) translateZ(2px)}
+.gl{width:70%;height:20px;margin:42px auto 0;background:radial-gradient(ellipse,rgba(227,195,123,.35),transparent 70%)}
+.ldt{letter-spacing:4px;font-size:.75rem;color:#e0bd7f;animation:rise 1s 1.3s both}
+@keyframes spin{from{transform:rotateX(-8deg) rotateY(0)}to{transform:rotateX(-8deg) rotateY(360deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.ldlogo .lt b{font-size:1.15rem}.ldlogo .mark{width:60px;height:60px}.ldlogo .lt small{display:none}}
+#loader{align-items:center;justify-content:center}
+.ld{width:100%;margin:auto}
+/* ===== BLACK + GOLD + SILVER THEME ===== */
+:root{--gold:#d9b25f}
+body{background:radial-gradient(ellipse at 50% 0%,#1d1d22,#08080a 62%) fixed;color:#d5d9de}
+nav{background:rgba(8,8,10,.9);box-shadow:0 2px 25px rgba(0,0,0,.7);border-bottom:1px solid rgba(217,178,95,.25)}
+#menu a{color:#dfe3e8}#burger{color:#d9b25f}
+.lt b{color:#e9edf2}.lt small{color:#9aa3ad}.lt i{color:#d9b25f}
+.gold{background:linear-gradient(90deg,#f6dc9a,#d9a93f,#fff0bf,#d9a93f);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:gshine 4s linear infinite}
+@keyframes gshine{to{background-position:200% 0}}
+.title{color:#e8ebf0;text-shadow:0 0 28px rgba(255,255,255,.1)}
+.title::after{content:"";display:block;width:100px;height:3px;margin:14px auto 0;background:linear-gradient(90deg,transparent,#d9b25f,#c8ced6,#d9b25f,transparent)}
+.hero{background:linear-gradient(120deg,rgba(0,0,0,.92),rgba(10,10,12,.72))}
+.ph{border:3px solid rgba(217,178,95,.7);box-shadow:0 0 40px rgba(217,178,95,.25),0 30px 60px rgba(0,0,0,.7)}
+.card{background:linear-gradient(145deg,#18181c,#0b0b0e);border:1px solid rgba(217,178,95,.28);box-shadow:0 10px 35px rgba(0,0,0,.65)}
+.card:hover{box-shadow:0 0 0 1px rgba(217,178,95,.55),0 20px 55px rgba(217,178,95,.2)}
+.card h3{color:#f1f3f6}.card p{color:#aab2bc;opacity:1}
+.alt{background:rgba(255,255,255,.03)}
+.stat b{color:#eef1f5}.stat p{color:#9aa3ad}
+.btn{box-shadow:0 0 22px rgba(217,178,95,.45);animation:bglow 3s ease-in-out infinite}
+@keyframes bglow{50%{box-shadow:0 0 36px rgba(217,178,95,.8)}}
+.btn.ghost{color:#e6e9ee!important;border:1px solid #aeb6c0;box-shadow:none;animation:none}
+.f{background:#141417;color:#dfe3e8;border:1px solid rgba(200,206,214,.35)}
+.f.on,.f:hover{background:linear-gradient(135deg,#f6dc9a,#b8862b);color:#000}
+.cta{background:radial-gradient(circle at 50% 0%,#221d0e,#050506 70%);border-top:1px solid rgba(217,178,95,.3);border-bottom:1px solid rgba(217,178,95,.3)}
+footer{background:#050506;border-top:1px solid rgba(217,178,95,.3);color:#aab2bc}
+.badge{background:rgba(0,0,0,.8);color:#d9b25f;border:1px solid rgba(217,178,95,.6)}
+.citem{background:#121215;color:#e6e9ee;border:1px solid rgba(217,178,95,.3)}
+.citem span{background:linear-gradient(135deg,#f6dc9a,#b8862b)}
+.cform{background:#121215}.cform h3{color:#e8ebf0}
+.glow::before{background:conic-gradient(from 0deg,#d9b25f,#c8ced6,#d9b25f)}
+input,select,textarea{background:#0d0d10;color:#e6e9ee;border:1px solid rgba(200,206,214,.28)}
+input:focus,select:focus,textarea:focus{border-color:#d9b25f;box-shadow:0 0 14px rgba(217,178,95,.4)}
+.av{background:linear-gradient(135deg,#f6dc9a,#b8862b);color:#000}
+@media(max-width:800px){#menu{background:#0c0c0f}}
+
+/* LOADER-BLACK */
+#loader{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,#1d1d22,#050506 75%);color:#fff}
+.ld{width:100%;margin:auto}

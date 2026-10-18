@@ -1,4 +1,4 @@
-addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),700));
+addEventListener('load',()=>{const l=document.getElementById('loader');setTimeout(()=>{l.classList.add('hide');setTimeout(()=>l.style.display='none',900)},document.body.dataset.home?4800:600)});
 const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40));
 document.getElementById('burger').onclick=()=>document.getElementById('menu').classList.toggle('open');
 const cur=document.getElementById('cursor');addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
@@ -10,13 +10,13 @@ document.querySelectorAll('.tilt').forEach(c=>{c.addEventListener('mousemove',e=
 c.style.transform=`perspective(800px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateY(-6px)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
 const cv=document.getElementById('bg'),R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
 R.setPixelRatio(Math.min(devicePixelRatio,2));const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(60,1,.1,100);C.position.z=12;
-const mat=new THREE.LineBasicMaterial({color:0xb48a4c});
+const mat=new THREE.LineBasicMaterial({color:0xd9b25f});
 function house(){const g=new THREE.Group();
 g.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(2,1.5,2)),mat));
-const roof=new THREE.Mesh(new THREE.ConeGeometry(1.7,1.1,4),new THREE.MeshBasicMaterial({color:0xb48a4c,wireframe:true}));roof.position.y=1.3;roof.rotation.y=Math.PI/4;g.add(roof);return g}
+const roof=new THREE.Mesh(new THREE.ConeGeometry(1.7,1.1,4),new THREE.MeshBasicMaterial({color:0xd9b25f,wireframe:true}));roof.position.y=1.3;roof.rotation.y=Math.PI/4;g.add(roof);return g}
 const hs=[];for(let i=0;i<9;i++){const h=house();h.position.set((Math.random()-.5)*26,(Math.random()-.5)*16,(Math.random()-.5)*12-3);h.scale.setScalar(.5+Math.random()*1.2);h.userData={s:Math.random()*.01+.003,f:Math.random()*2};S.add(h);hs.push(h)}
 const pg=new THREE.BufferGeometry(),pa=[];for(let i=0;i<700;i++)pa.push((Math.random()-.5)*40,(Math.random()-.5)*30,(Math.random()-.5)*30);
-pg.setAttribute('position',new THREE.Float32BufferAttribute(pa,3));const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xd9b77e,size:.05}));S.add(pts);
+pg.setAttribute('position',new THREE.Float32BufferAttribute(pa,3));const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xc8ced6,size:.05}));S.add(pts);
 let mx=0,my=0,sy=0;addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});addEventListener('scroll',()=>sy=scrollY);
 function rs(){R.setSize(innerWidth,innerHeight);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix()}rs();addEventListener('resize',rs);
 (function loop(t){requestAnimationFrame(loop);t*=.001;hs.forEach(h=>{h.rotation.y+=h.userData.s;h.position.y+=Math.sin(t+h.userData.f)*.003});
